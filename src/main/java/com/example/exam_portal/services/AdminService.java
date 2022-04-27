@@ -1,9 +1,11 @@
 package com.example.exam_portal.services;
 
 import com.example.exam_portal.models.Course;
+import com.example.exam_portal.models.Paper;
 import com.example.exam_portal.models.Student;
 import com.example.exam_portal.repository.AdminRepository;
 import com.example.exam_portal.repository.CourseRepository;
+import com.example.exam_portal.repository.PaperRepository;
 import com.example.exam_portal.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ public class AdminService {
     @Autowired
     StudentRepository studentRepository;
 
+    @Autowired
+    PaperRepository paperRepository;
 
     @Autowired
     CourseRepository courseRepository;
@@ -58,5 +62,11 @@ public class AdminService {
 
     public List<Course> viewCourseByBranch(String branch) {
         return courseRepository.findAllByBranch(branch);
+    }
+
+
+    public void addPaper(Paper paper)
+    {
+        this.paperRepository.save(paper);
     }
 }

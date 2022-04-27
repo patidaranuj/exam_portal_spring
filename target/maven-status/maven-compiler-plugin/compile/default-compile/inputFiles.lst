@@ -1,0 +1,15 @@
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/repository/AdminRepository.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/repository/OptionsRepository.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/models/Options.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/models/Student.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/models/Paper.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/repository/StudentRepository.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/repository/QuestionRepository.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/models/Question.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/models/Course.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/controller/AdminController.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/services/AdminService.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/repository/PaperRepository.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/repository/CourseRepository.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/models/Admin.java
+/Users/sheetal/Desktop/exam_portal/src/main/java/com/example/exam_portal/ExamPortalApplication.java

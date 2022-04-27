@@ -1,0 +1,15 @@
+com/example/exam_portal/models/Course.class
+com/example/exam_portal/models/Student.class
+com/example/exam_portal/repository/StudentRepository.class
+com/example/exam_portal/services/AdminService.class
+com/example/exam_portal/models/Question.class
+com/example/exam_portal/repository/PaperRepository.class
+com/example/exam_portal/ExamPortalApplication.class
+com/example/exam_portal/models/Options.class
+com/example/exam_portal/repository/QuestionRepository.class
+com/example/exam_portal/repository/OptionsRepository.class
+com/example/exam_portal/models/Paper.class
+com/example/exam_portal/repository/AdminRepository.class
+com/example/exam_portal/models/Admin.class
+com/example/exam_portal/controller/AdminController.class
+com/example/exam_portal/repository/CourseRepository.class
