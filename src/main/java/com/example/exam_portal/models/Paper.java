@@ -13,6 +13,7 @@ public class Paper
     @Column(name="pid")
     private int pid;
     private String name;
+    private String courseId;
     //@OneToMany(mappedBy = "paper",cascade = CascadeType.ALL)
     @OneToMany(targetEntity = Question.class,cascade = CascadeType.ALL)
     private List<Question> questions;
@@ -23,6 +24,14 @@ public class Paper
 
     public void setPid(int pid) {
         this.pid = pid;
+    }
+
+    public String getcourseId() {
+        return courseId;
+    }
+
+    public void setcourseId(String courseId) {
+        this.courseId = courseId;
     }
 
     public String getName() {
@@ -44,9 +53,10 @@ public class Paper
     public Paper() {
     }
 
-    public Paper(int pid, String name, List<Question> questions) {
+    public Paper(int pid, String name,String courseId, List<Question> questions) {
         this.pid = pid;
         this.name = name;
         this.questions = questions;
+        this.courseId=courseId;
     }
 }

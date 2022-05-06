@@ -45,7 +45,7 @@ public class AdminController {
     }
 
     /*----------------------------------------Paper----------------------------------------*/
-    @GetMapping("/")
+    @GetMapping("/admin/addpaper")
     public String addPaper(@RequestBody Paper paper)
     //public String addPaper()
     {
