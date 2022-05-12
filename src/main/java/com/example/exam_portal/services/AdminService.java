@@ -69,4 +69,20 @@ public class AdminService {
     {
         this.paperRepository.save(paper);
     }
+
+    public List<Course> allCourse() {
+        return courseRepository.findAll();
+    }
+
+    public List<Paper> viewPaper() {
+        return paperRepository.findAll();
+    }
+
+    public Paper findByPaperId(int id) {
+        return paperRepository.findByPid(id);
+    }
+
+    public void deletePaper(Paper s) {
+        paperRepository.delete(s);
+    }
 }

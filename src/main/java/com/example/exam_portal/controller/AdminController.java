@@ -3,10 +3,13 @@ import com.example.exam_portal.models.*;
 import com.example.exam_portal.services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 @RestController
+@CrossOrigin("*")
 public class AdminController {
 
     @Autowired
@@ -17,16 +20,17 @@ public class AdminController {
         return adminService.addStudent(student);
     }
 
-    @PostMapping("/admin/viewStudent")
+    @GetMapping("/admin/viewStudent")
     public List<Student> viewStudent(){
         return adminService.viewStudent();
     }
 
-    @PostMapping("/admin/viewStudent/{studentId}")
+    @GetMapping("/admin/viewStudent/{studentId}")
     public Student viewStudentById(@PathVariable String studnetId){
         return adminService.findByEnrollId(studnetId);
     }
-    @PostMapping("/admin/viewStudentBySem/{sem}")
+
+    @GetMapping("/admin/viewStudentBySem/{sem}")
     public List<Student> viewStudentBySem(@PathVariable int sem)
     {
         return adminService.viewAllStudentBySem(sem);
@@ -45,13 +49,27 @@ public class AdminController {
     }
 
     /*----------------------------------------Paper----------------------------------------*/
-    @GetMapping("/admin/addpaper")
-    public String addPaper(@RequestBody Paper paper)
+    @GetMapping("/admin/viewpaper")
+    public List<Paper> viewPaper()
+    {
+        return this.adminService.viewPaper();
+    }
+    @PostMapping("/admin/addpaper")
+    public String addPaper(@RequestBody PaperWithoutQues sample)
     //public String addPaper()
     {
-        Paper p=new Paper();
 
-        this.adminService.addPaper(paper);
+        Paper p=new Paper();
+        Question q=new Question();
+        p.setCourseId(sample.getCourseId());
+        p.setName(sample.getName());
+        p.setMaxMark(sample.getMaxMark());
+        p.setNumOfQues(sample.getNumOfQues());
+        List<Options> ol =new ArrayList<>();
+        q.setOptions(ol);
+       List<Question> ql=new ArrayList<>();
+       p.setQuestions(ql);
+         this.adminService.addPaper(p);
         return "added";
     }
 //        Options op=new Options();
@@ -74,16 +92,29 @@ public class AdminController {
 //        return "added";
 //    }
 
+    @DeleteMapping("/admin/deletepaper")
+    public void deletePaper(@RequestParam Integer id)
+    {
+        Paper s=adminService.findByPaperId(id);
+        adminService.deletePaper(s);
+    }
+
     /*------------------------------------------Course-------------------------------------*/
     @PostMapping("/admin/addCourse")
     public Course addCourse(@RequestBody Course course){
         return adminService.addCourse(course);
     }
 
-    @PostMapping("/admin/viewCourseByBranch/{branch}")
+    @GetMapping("/admin/viewCourseByBranch/{branch}")
     public List<Course> viewCourseByBranch(@PathVariable String branch)
     {
         return adminService.viewCourseByBranch(branch);
+    }
+
+    @GetMapping("/viewcourse")
+    public List<Course> allCourses()
+    {
+        return adminService.allCourse();
     }
 
 

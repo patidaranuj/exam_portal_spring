@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface PaperRepository extends JpaRepository<Paper,Integer> {
     Paper findAllByCourseId(String enrolledCourses);
+
+    Paper findByPid(int id);
 }
